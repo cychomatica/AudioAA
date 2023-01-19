@@ -6,7 +6,7 @@ import torch
 
 from .other_utils import Logger
 from autoattack import checks
-from autoattack.state import EvaluationState
+from state import EvaluationState
 
 
 class AutoAttack():

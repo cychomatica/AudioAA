@@ -12,8 +12,8 @@ import torch.nn.functional as F
 import math
 import random
 
-from autoattack.other_utils import L0_norm, L1_norm, L2_norm
-from autoattack.checks import check_zero_gradients
+from other_utils import L0_norm, L1_norm, L2_norm
+from checks import check_zero_gradients
 
 
 def L1_projection(x2, y2, eps1):
