@@ -336,3 +336,5 @@ class AutoAttack():
             self.apgd.n_restarts = 1
             self.apgd.eot_iter = 20
 
+        elif version == 'audio_standard':
+            self.attacks_to_run = ['apgd-ce', 'apgd-dlr', 'fab']

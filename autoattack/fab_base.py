@@ -158,7 +158,7 @@ class FABAttack():
                                         .sum(dim=-1)
                                         .view(t.shape[0], *[1]*self.ndims)) / 2
 
-            x1 = x1.clamp(0.0, 1.0)
+            x1 = x1.clamp(-1.0, 1.0)
 
         counter_iter = 0
         while counter_iter < self.n_iter:
@@ -223,7 +223,7 @@ class FABAttack():
                                     self.alpha_max * torch.ones(a1.shape)
                                     .to(self.device))
                 x1 = ((x1 + self.eta * d1) * (1 - alpha) +
-                        (im2 + d2 * self.eta) * alpha).clamp(0.0, 1.0)
+                        (im2 + d2 * self.eta) * alpha).clamp(-1.0, 1.0)
 
                 is_adv = self._get_predicted_label(x1) != la2
 
